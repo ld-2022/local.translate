@@ -1,0 +1,37 @@
+<idea-plugin>
+    <id>com.ld.rookie</id>
+    <name>Rookie</name>
+    <vendor email="1@11091.cn" url="">LD</vendor>
+
+    <description><![CDATA[
+    Rookie is a prompt box internationalization tool, which can only support Chinese at present.
+Idea supports JetBrains series 2020 and above
+    <h2>usage method:</h2>
+    <ul>
+        <li>The translation is after each prompt in the prompt box</li>
+        <li>It can be used in an environment without network</li>
+    </ul>
+    <img src="https://skynet-beijing.oss-cn-beijing.aliyuncs.com/test/iShot2022-05-05_09.49.39.png"  alt="Java completion" width="700"/>
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+<!--    <depends optional="true" config-file="">com.intellij.java</depends>-->
+    <idea-version since-build="201"/>
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <completion.contributor language="any" implementationClass="com.ld.MyCompletionContributor" order="first"/>
+        <postStartupActivity implementation="com.ld.MyStartupActivity"/>
+<!--        <editorFactoryListener implementation="com.ld.MyEditorFactoryListener"/>-->
+<!--        <editorFactoryDocumentListener implementation="com.ld.MyDocumentListener" />-->
+<!--        <searchEverywhereContributor implementation="com.ld.search.LDSearchEverywhereContributor$Factory" />-->
+    </extensions>
+    <actions>
+        <!-- Add your actions here -->
+        <action id="TranslateAnAction" class="com.ld.aciton.TranslateAnAction" text="中->英"
+                description="TranslateAnAction" icon="/icons/probie.png">
+            <add-to-group group-id="EditorPopupMenu3" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
