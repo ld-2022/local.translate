@@ -13,6 +13,16 @@ Idea supports JetBrains series 2020 and above
     </ul>
     <img src="https://skynet-beijing.oss-cn-beijing.aliyuncs.com/test/iShot2022-05-05_09.49.39.png"  alt="Java completion" width="700"/>
     ]]></description>
+    <change-notes><![CDATA[
+            <li>2.2
+                <ul>
+                    <li>Fix word segmentation problem.</li>
+                    <li>New translation window.</li>
+                </ul>
+            </li>
+    ]]>
+    </change-notes>
+
 
     <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
          on how to target different products -->
@@ -29,8 +39,12 @@ Idea supports JetBrains series 2020 and above
     </extensions>
     <actions>
         <!-- Add your actions here -->
-        <action id="TranslateAnAction" class="com.ld.aciton.TranslateAnAction" text="中->英"
+        <action id="TranslateAnAction" class="com.ld.aciton.TranslateAnAction" text="中英翻译"
                 description="TranslateAnAction" icon="/icons/probie.png">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+        <action id="ZhToEnAnAction" class="com.ld.aciton.ZhToEnAnAction" text="中->英"
+                description="ZhToEnAnAction" icon="/icons/probie.png">
             <add-to-group group-id="EditorPopupMenu3" anchor="last"/>
         </action>
     </actions>

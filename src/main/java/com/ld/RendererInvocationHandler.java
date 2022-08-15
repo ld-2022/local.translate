@@ -23,11 +23,11 @@ public class RendererInvocationHandler implements InvocationHandler {
 
     static Key<Boolean> ROOKIE_READ = Key.create("ROOKIE_READ");
     static Boolean support;
-    static Map<String, String> DIC = null;
+    public static Map<String, String> DIC = null;
     static Map<String, String> PIN_DIC = null;
     public static Map<String, String> ZH_EN_DIC = null;
     static Map<String, List<String>> DIC_CACHE = new HashMap<>(1000);
-    static Map<String,String> languageMap = SqliteFactory.getInstance().languageMap();
+    public static Map<String,String> languageMap = SqliteFactory.getInstance().languageMap();
     LookupCellRenderer lookupCellRenderer;
     static final JdbcTemplate jdbcTemplate = SqliteFactory.getInstance().getNoDb();
     Map<String,String> noDicMap = new HashMap<>();
