@@ -1,0 +1,14 @@
+kind: pipeline
+type: docker
+name: buildPlugin
+
+steps:
+  - name: build-plugin
+    image: gradle:7.5.1-jdk17-jammy
+    volumes:
+      - name: gradle-cache
+        path: /root/.gradle
+      - name: gradle-build
+        path: /build/distributions
+    commands:
+      - gradle buildPlugin

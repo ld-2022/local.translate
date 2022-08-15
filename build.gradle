@@ -23,8 +23,8 @@ dependencies {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-//    version = '2021.3'
-    localPath="/Applications/IntelliJ IDEA.app/Contents"
+    version = '2021.3'
+//    localPath="/Applications/IntelliJ IDEA.app/Contents"
     intellij.updateSinceUntilBuild=false
 }
 patchPluginXml {
