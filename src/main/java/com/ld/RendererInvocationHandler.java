@@ -141,7 +141,7 @@ public class RendererInvocationHandler implements InvocationHandler {
         // 分词后翻译
         List<String> humpParticiple = null;
         try {
-            humpParticiple = TokenStreamUtils.toList(new CoderAnalyzer().tokenStream("xxx",lookupString));
+            humpParticiple = TokenStreamUtils.toList(new CoderAnalyzer().tokenStream("",lookupString));
         } catch (Exception e) {
             humpParticiple = List.of(lookupString);
             System.out.println("--->"+lookupString);
@@ -151,8 +151,8 @@ public class RendererInvocationHandler implements InvocationHandler {
             // 优先使用当前语言包
             if (languageMap.containsKey(s)){
                 wordList.add(languageMap.get(s));
-            }else if (DIC.containsKey(s)) {
-                wordList.add(DIC.get(s));
+            }else {
+                wordList.add(DIC.getOrDefault(s, s));
             }
         }
         boolean flag = humpParticiple.size() == wordList.size();

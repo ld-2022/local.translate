@@ -38,26 +38,8 @@ public class TranslateAnAction extends AnAction {
         if (frame == null) {
             return;
         }
-
         TranslateDialog dialog = new TranslateDialog(project,true);
         dialog.showAndGet();
-//        TransilateWindow transilateWindow = new TransilateWindow();
-//        JPanel rootPanel = transilateWindow.getRootPanel();
-//        JBPopupFactory factory = JBPopupFactory.getInstance();
-//        ComponentPopupBuilder popupBuilder = factory.createComponentPopupBuilder(rootPanel, null);
-//        popupBuilder.setFocusable(true);
-//        popupBuilder.setResizable(true);
-//        popupBuilder.setMovable(true);
-//        popupBuilder.setRequestFocus(true);
-//        popupBuilder.setCancelOnClickOutside(false);
-//        popupBuilder.setTitle("中英翻译 v1.0");
-//        Icon icon = findIcon("/icon/probie.png");
-//        popupBuilder.setTitleIcon(new ActiveIcon(icon));
-//        JBPopup hint = popupBuilder.createPopup();
-//        Dimension frameSize = frame.getSize();
-//        Dimension dimension = new Dimension(Double.valueOf(frameSize.width * 0.3).intValue(), Double.valueOf(frameSize.height * 0.2).intValue());
-//        hint.setSize(dimension);
-//        hint.showCenteredInCurrentWindow(project);
     }
 
 
