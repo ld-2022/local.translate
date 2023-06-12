@@ -1,6 +1,7 @@
 package com.ld;
 
 import com.intellij.codeInsight.completion.*;
+import com.intellij.codeInsight.lookup.LookupElement;
 import com.intellij.codeInsight.lookup.LookupManager;
 import com.intellij.codeInsight.lookup.impl.LookupCellRenderer;
 import com.intellij.codeInsight.lookup.impl.LookupImpl;
@@ -47,7 +48,7 @@ public class MyCompletionContributor extends CompletionContributor {
                     return;
                 }
                 ListCellRenderer<?> listCellRenderer = RendererInvocationHandler.getListCellRenderer((LookupCellRenderer) lookupCellRenderer, completionParameters);
-                lookup.getList().setCellRenderer(listCellRenderer);
+                lookup.getList().setCellRenderer((ListCellRenderer<? super LookupElement>) listCellRenderer);
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }

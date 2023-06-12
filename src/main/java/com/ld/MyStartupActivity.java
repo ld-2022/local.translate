@@ -67,15 +67,15 @@ public class MyStartupActivity implements StartupActivity {
             JdbcTemplate baseDb = SqliteFactory.getInstance().getBaseDb();
             String num = baseDb.queryForMap("SELECT COUNT(word) AS num from fanyi where word_zh NOT NULL ").get("num").toString();
             progressIndicator.setText(String.format("词典数量:%s",num));
-            int i1 = Integer.parseInt(num) / 10000;
+            int i1 = Integer.parseInt(num) / 100000;
             RendererInvocationHandler.DIC = new HashMap<>(400000);
             RendererInvocationHandler.PIN_DIC = new HashMap<>(400000);
             RendererInvocationHandler.ZH_EN_DIC = new HashMap<>(400000);
             for (int i = 0; i < i1; i++) {
                 progressIndicator.setFraction((float)i/i1);
-                int start = i * 10000;
+                int start = i * 100000;
                 try {
-                    List<Map<String, Object>> mapList = baseDb.queryForList("select * from fanyi where word_zh NOT NULL  LIMIT ?,10000", start);
+                    List<Map<String, Object>> mapList = baseDb.queryForList("select * from fanyi where word_zh NOT NULL  LIMIT ?,100000", start);
                     for (Map<String, Object> stringObjectMap : mapList) {
                         String word = stringObjectMap.get("word").toString();
                         String word_zh = stringObjectMap.get("word_zh").toString();
